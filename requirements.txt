@@ -1,0 +1,8 @@
+# Intentionally old versions for an authorized Trivy demonstration.
+Flask==2.0.2
+Werkzeug==2.0.2
+requests==2.19.1
+
+# Test dependency
+pytest==7.1.2
+
