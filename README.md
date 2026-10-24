@@ -1,10 +1,10 @@
-# SecureFix Vulnerable Demo
+# Fixitry Vulnerable Demo
 
 > WARNING: This repository is intentionally insecure. It is only for local,
 > authorized security-scanning demonstrations. Do not deploy it to the public
 > internet and do not place real credentials in it.
 
-This small Flask application is a controlled target for a SecureFix demo using:
+This small Flask application is a controlled target for a Fixitry demo using:
 
 - Trivy to identify vulnerable dependencies, secrets, and misconfigurations.
 - Factory Droid SDK to prepare and test repairs.
@@ -57,20 +57,6 @@ trivy fs --scanners vuln,secret,misconfig --format json --output trivy-results.j
 ```
 
 Do not commit `trivy-results.json`; it is ignored by `.gitignore`.
-
-## Suggested demo
-
-1. Push this starting version to a private or clearly labeled demo repository.
-2. Submit its URL through the SecureFix React dashboard.
-3. Let the worker clone it into a temporary directory.
-4. Run Trivy and send the JSON findings to Convex.
-5. Display the findings and ask for human approval.
-6. Give Factory one approved category at a time.
-7. Run the tests and Trivy again.
-8. Show the before-and-after counts and code diff.
-
-For a short demo, repair the hardcoded key and Docker root-user issue first.
-They are visually clear and do not depend on a changing vulnerability database.
 
 ## Factory prompt
 
