@@ -10,8 +10,8 @@ RUN chmod -R 777 /app
 
 EXPOSE 5000
 
-# INTENTIONALLY INSECURE: The application is explicitly run as root.
-USER root
+# Run the application with an unprivileged UID and GID.
+USER 10001:10001
 
 CMD ["python", "-m", "app.main"]
 
