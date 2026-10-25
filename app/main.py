@@ -1,9 +1,10 @@
 from flask import Flask, jsonify
-
+from app.legacy import legacy
 from app.config import DEMO_PAYMENT_API_KEY
 
 
 app = Flask(__name__)
+app.register_blueprint(legacy)
 
 
 @app.get("/")

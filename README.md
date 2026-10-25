@@ -18,6 +18,8 @@ The starting version contains four categories of problems:
 2. A clearly fake hardcoded key in `app/config.py`.
 3. An insecure `Dockerfile` that runs as root.
 4. Insecure example AWS Terraform in `infra/main.tf`.
+5. Intentionally insecure Python code in `app/legacy.py` (SQL injection, path
+   traversal, template injection, weak hashing) for static-analysis demos.
 
 The key and infrastructure names are fake. The Terraform is never meant to be
 applied.
