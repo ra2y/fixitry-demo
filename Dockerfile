@@ -1,5 +1,5 @@
 # INTENTIONALLY INSECURE: Trivy should report several Dockerfile findings.
-FROM python:3.11-slim
+FROM python:3.9
 
 WORKDIR /app
 
@@ -14,3 +14,4 @@ EXPOSE 5000
 USER root
 
 CMD ["python", "-m", "app.main"]
+
