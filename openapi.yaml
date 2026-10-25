@@ -1,0 +1,53 @@
+openapi: 3.0.3
+info:
+  title: SecureFix Vulnerable Demo API
+  version: "1.0.0"
+  description: >-
+    Description of the demo's endpoints so that a dynamic scanner can find them.
+    The application is intentionally insecure and for local testing only.
+servers:
+  - url: http://127.0.0.1:5000
+paths:
+  /:
+    get:
+      summary: Application banner
+      responses:
+        "200": { description: OK }
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200": { description: OK }
+  /api/config-status:
+    get:
+      summary: Reports whether a payment key is configured (never returns the key)
+      responses:
+        "200": { description: OK }
+  /api/users:
+    get:
+      summary: Find a user by name
+      parameters:
+        - { name: name, in: query, required: false, schema: { type: string, example: alice } }
+      responses:
+        "200": { description: OK }
+  /api/notes:
+    get:
+      summary: Read a note file
+      parameters:
+        - { name: file, in: query, required: false, schema: { type: string, example: welcome.txt } }
+      responses:
+        "200": { description: OK }
+  /api/greet:
+    get:
+      summary: Greet a visitor
+      parameters:
+        - { name: name, in: query, required: false, schema: { type: string, example: Ana } }
+      responses:
+        "200": { description: OK }
+  /api/checksum:
+    get:
+      summary: Checksum of some text
+      parameters:
+        - { name: text, in: query, required: false, schema: { type: string, example: hello } }
+      responses:
+        "200": { description: OK }
