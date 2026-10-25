@@ -39,8 +39,8 @@ def read_note():
 @legacy.get("/api/greet")
 def greet():
     name = request.args.get("name", "friend")
-    # INTENTIONALLY INSECURE: user input becomes part of the template (XSS/SSTI).
-    return render_template_string("<h1>Hello " + name + "</h1>")
+    # Pass user input as a template variable so it is escaped.
+    return render_template_string("<h1>Hello {{ name }}</h1>", name=name)
 
 
 @legacy.get("/api/checksum")
